@@ -4,6 +4,7 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
+import React from 'react';
 
 
 export default function AuthenticatedLayout({ header, children }) {
@@ -30,6 +31,18 @@ export default function AuthenticatedLayout({ header, children }) {
                                     active={route().current('dashboard')}
                                 >
                                     Dashboard
+                                </NavLink>
+                                <NavLink
+                                    href={route('employee.index')}
+                                    active={route().current('employee.index')}
+                                >
+                                    Employee List
+                                </NavLink>
+                                <NavLink
+                                    href={route('employee.create')}
+                                    active={route().current('employee.create')}
+                                >
+                                    Create Employee
                                 </NavLink>
                             </div>
                         </div>

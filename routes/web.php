@@ -6,7 +6,17 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index');
+Route::get('/employee', [EmployeeController::class, 'index'])
+->name('employee.index');
+
+// หน้าแบบฟอร์มสำหรับเพิ่มข้อมูลพนักงาน
+Route::get('/employee/create', [EmployeeController::class, 'create'])
+->name('employee.create');
+
+// Function สำหรับบันทึกข้อมูลพนักงาน
+Route::post('/employee', [EmployeeController::class, 'store']) 
+->name('employee.store');
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
